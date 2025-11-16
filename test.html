@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>test</title>
+    </head>
+    <body>
+        <div class="toRender"></div>
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+        <script type="text/babel">
+            // function  AppT1() {
+            //     const price = 10 + 8 + 8
+            //     const shippingCost = 5
+            //     const today = dayjs().format("MMMM D")
+            //     const time = dayjs().format("HH:mm:ss")
+                
+            //     return (
+            //         <>
+            //         <p>Product Cose: ${price} </p>
+            //         <p>Shipping Cost: ${shippingCost}</p>
+            //         <p>Total Cost: ${price + shippingCost}</p>
+            //         <button>Place Your Order</button>
+            //         <p>Today is {today}</p>
+            //         <p>Time is {time}</p>
+            //         </>
+            //     )
+            // }
+        // const container = document.querySelector(".toRender")
+        // const root = ReactDOM.createRoot(container)
+        // setInterval( () => {root.render(<AppT1/>)}, 1000)
+    //     function ECommerce() {
+    //         function ProductDetails({item, price, discountPrice}){
+    //             return(
+    //                 <div>
+    //                 {item}
+    //                 {discountPrice ? 
+    //                    ( <>
+    //                     <del><p>Price: ${price}</p></del> 
+    //                     <p>Discount Price: ${discountPrice}</p>
+    //                     </>) : 
+    //                     (<p>Price: ${price}</p>)
+
+    //                 }
+    //                 <button>Add to cart</button>
+    //                 </div>
+    //         )
+    //         }
+    //         return(<>
+    //         <ProductDetails item="Cotton socks" price="10.90" discountPrice="5.45"/>
+    //         <ProductDetails item="Tennis Balls" price="6.00"/>
+    //         <ProductDetails item="Plain T-shirt" price="7.99"/>
+    //         </>
+    // )
+    //     }
+    //     function AppT2(){
+    //         return(
+    //         <ECommerce/>
+    //         )}
+        // const container = document.querySelector(".toRender")
+        // ReactDOM.createRoot(container).render(<AppT2/>)
+
+        function AppT3() {
+            const [count , setCount] = React.useState(0)
+            function clicked(){
+                 setCount(count + 1)
+                //  console.log(count);
+                 
+                
+            }
+            // console.log(count);
+            
+            return(
+                // {count === 1 }
+                <button onClick={clicked}>Clicked {count} time</button>
+            )
+        }
+        const container = document.querySelector(".toRender")
+        ReactDOM.createRoot(container).render(<AppT3/>)
+        </script>
+    </body>
+</html>
