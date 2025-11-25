@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
-    <style>
-      .btn {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>test</title>
+        <style>
+          input{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 2px;
+          }
+          .btn {
+        color: aliceblue;
+        background: rgb(0,123,225);
+        padding: 10px;
+        border: none;
+        border-radius: 9px;
+        margin: 10px;
+      }
+      /* .OnBtn {
         color: aliceblue;
         background: rgb(25, 135, 84);
         padding: 20px;
         border: none;
         border-radius: 9px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="toRender"></div>
-    <script src="https://unpkg.com/supersimpledev/react.js"></script>
-    <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
-    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
-    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
-    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
-    <script type="text/babel">
+      .OffBtn{
+        color: aliceblue;
+        background: rgb(220, 53, 69);
+        padding: 20px;
+        border: none;
+        border-radius: 9px;
+      } */
+        </style>
+    </head>
+    <body>
+        <div class="toRender"></div>
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/chatbot.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+        <script type="text/babel">
       // function  AppT1() {
       //     const price = 10 + 8 + 8
       //     const shippingCost = 5
@@ -140,15 +160,67 @@
       // const container = document.querySelector(".toRender");
       // ReactDOM.createRoot(container).render(<AppT3 />);
 
-      function AppT4() {
-        return (
-          <>
-            <button className="btn">ON</button>
-          </>
-        );
+      // function AppT4() {
+      //   const [isNo, setOff] = React.useState(true)
+      //   function switchBtn(){
+      //       if(isNo){
+      //           setOff(false)
+      //       }
+      //       else{
+      //           setOff(true)
+      //       }
+      //   }
+      //   return (
+      //     <>
+      //       <button className={isNo ? "OnBtn" : "OffBtn"} onClick={switchBtn}>{isNo ? "No" : "Off"}</button>
+      //     </>
+      //   );
+      // }
+
+      // function AppT4(){
+      //   const [pass, setPass] = React.useState(true)
+      //   function showPass(){
+      //     if(pass){
+      //     setPass(false)
+      //   }
+      //   else{
+      //     setPass(true)
+      //   }}
+      //   return(
+      //     <>
+      //     <h2>Hello, Welcome to my website</h2>
+      //     <br />
+      //     <input type="email" placeholder="Email"/>
+      //     <br />
+
+      //     <input type={pass ? "password":"text" } placeholder="Password"/> <button className="btn" onClick ={showPass}>{pass ? "Show" : "Hide"}</button>
+      //     <br />
+
+      //     <button className="btn">Login</button>
+        
+
+      //     <button className="btn">Sign Up</button>
+      //   </>
+      // )
+      // }
+      // const container = document.querySelector(".toRender");
+      // ReactDOM.createRoot(container).render(<AppT4 />);
+      function AppT5(){
+        const [time, setTime] = React.useState(dayjs().format("HH:mm:ss"))
+        React.useEffect(() => {
+          setInterval(() => {
+            console.log("run code");
+            
+            setTime(dayjs().format("HH:mm:ss"))
+          }, 1000)
+        })
+      
+        return(
+         <p>{time}</p>
+        )
       }
       const container = document.querySelector(".toRender");
-      ReactDOM.createRoot(container).render(<AppT4 />);
-    </script>
-  </body>
+      ReactDOM.createRoot(container).render(<AppT5 />);
+        </script>
+    </body>
 </html>
