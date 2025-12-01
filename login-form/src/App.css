@@ -1,0 +1,13 @@
+input {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 2px;
+}
+.btn {
+  color: aliceblue;
+  background: rgb(0, 123, 225);
+  padding: 10px;
+  border: none;
+  border-radius: 9px;
+  margin: 10px;
+}
