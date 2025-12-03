@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Header } from "../components/header";
 import "./tracking.css";
 export function Tracking() {
