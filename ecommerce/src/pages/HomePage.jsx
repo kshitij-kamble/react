@@ -1,15 +1,14 @@
 import { Header } from "../components/header";
 import "./HomePage.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { products } from "../../staring-code/data/products";
 export function HomePage() {
-  const [products, setProducts] = useState([]);
-  useEffect(() => {
-    axios.get("http://localhost:3000/api/products").then((response) => {
-      setProducts(response.data);
+  fetch("http://localhost:3000/api/products")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
     });
-  }, []);
-
   return (
     <>
       <title>Ecommerce Project</title>
