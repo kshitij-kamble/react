@@ -16,7 +16,7 @@ useEffect(() => {
       setCart(response.data);
       
     })
-})
+},[])
   
   return (
     <Routes>
