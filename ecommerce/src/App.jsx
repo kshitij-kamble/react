@@ -1,19 +1,21 @@
 import { Route, Routes } from "react-router";
 import "./App.css";
-import { OrdersPage } from "./pages/OrdersPage";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { Tracking } from "./pages/Tracking";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { HomePage } from "./pages/home/HomePage";
+import { OrdersPage } from "./pages/order/OrdersPage";
 
 function App() {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    axios.get("/api/cart-items?expand=product").then((response) => {
+    const getData = async () => {
+      const response = await axios.get("/api/cart-items?expand=product");
       setCart(response.data);
-    });
+    };
+    getData();
   }, []);
 
   return (
