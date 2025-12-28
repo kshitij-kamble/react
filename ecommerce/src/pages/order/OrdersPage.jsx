@@ -6,12 +6,14 @@ import { Link } from "react-router";
 import { formatMoney } from "../../utils/money";
 import { Header } from "../../components/header";
 
-export function OrdersPage(cart) {
+export function OrdersPage({ cart }) {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    axios.get("/api/orders?expand=products").then((response) => {
+    const getOrdersData = async () => {
+      const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    });
+    };
+    getOrdersData();
   }, []);
 
   return (
