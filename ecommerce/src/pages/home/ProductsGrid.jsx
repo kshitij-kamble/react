@@ -5,7 +5,7 @@ export function ProductsGrid({ products, loadCart }) {
     <div className="products-grid">
       {products.map((product) => {
         return (
-          <Product key={product.id} product={product} loadCar={loadCart} />
+          <Product key={product.id} product={product} loadCart={loadCart} />
         );
       })}
     </div>
