@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { OrderHeader } from "./OrderHeader";
 import { OrderDetailsGrid } from "./OrderDetailsGrid";
 
-export function OrdersGrid() {
+export function OrdersGrid({ loadCart }) {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const getOrdersData = async () => {
@@ -19,7 +19,7 @@ export function OrdersGrid() {
         return (
           <div key={order.id} className="order-container">
             <OrderHeader order={order} />
-            <OrderDetailsGrid order={order} />
+            <OrderDetailsGrid order={order} loadCart={loadCart} />
           </div>
         );
       })}
